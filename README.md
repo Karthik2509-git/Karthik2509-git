@@ -12,7 +12,7 @@
 <div align="center">
   <br>
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=20&duration=3000&pause=1200&color=06B6D4&center=true&vCenter=true&multiline=false&repeat=true&random=false&width=700&height=30&lines=Building+intelligent+systems+that+perceive%2C+reason%2C+and+solve+real-world+problems;Machine+Learning+%C2%B7+Computer+Vision+%C2%B7+Robotics+%C2%B7+AI+Engineering;Turning+research+into+production-ready+AI+solutions" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=18&duration=3000&pause=1200&color=06B6D4&center=true&vCenter=true&multiline=false&repeat=true&random=false&width=900&height=45&lines=Building+intelligent+systems+with+AI;Turning+research+into+production-ready+AI+solutions;Developing+scalable+AI+systems+for+real-world+impact" alt="Typing SVG" />
   </a>
 </div>
 
