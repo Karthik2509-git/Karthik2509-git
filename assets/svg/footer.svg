@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="120" viewBox="0 0 850 120">
+  <style>
+    @keyframes footerPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D6EFD" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#0D6EFD" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#8B5CF6" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#06B6D4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="quoteGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C4B5FD"/>
+      <stop offset="100%" stop-color="#67E8F9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="850" height="120" fill="#0D1117"/>
+
+  <!-- Top accent line -->
+  <rect x="125" y="12" width="600" height="1" rx="0.5" fill="url(#footerGrad)" style="animation: footerPulse 5s ease-in-out infinite"/>
+
+  <!-- Quote -->
+  <text x="425" y="48" text-anchor="middle" fill="url(#quoteGrad)" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-style="italic" font-weight="300" letter-spacing="0.5">
+    "The best way to learn is by building."
+  </text>
+
+  <!-- Attribution -->
+  <text x="425" y="75" text-anchor="middle" fill="#64748B" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="300" letter-spacing="1">
+    Designed &amp; Built by Karthik Vanapalli
+  </text>
+
+  <!-- Small dots -->
+  <circle cx="380" cy="96" r="1.5" fill="#0D6EFD" opacity="0.5" style="animation: footerPulse 3s ease-in-out infinite"/>
+  <circle cx="405" cy="96" r="1.5" fill="#8B5CF6" opacity="0.5" style="animation: footerPulse 3s ease-in-out 0.5s infinite"/>
+  <circle cx="425" cy="96" r="1.5" fill="#06B6D4" opacity="0.5" style="animation: footerPulse 3s ease-in-out 1s infinite"/>
+  <circle cx="445" cy="96" r="1.5" fill="#8B5CF6" opacity="0.5" style="animation: footerPulse 3s ease-in-out 1.5s infinite"/>
+  <circle cx="470" cy="96" r="1.5" fill="#0D6EFD" opacity="0.5" style="animation: footerPulse 3s ease-in-out 2s infinite"/>
+</svg>

@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="280" viewBox="0 0 850 280">
+  <style>
+    @keyframes gradientShift {
+      0%, 100% { stop-color: #0D6EFD; }
+      33% { stop-color: #8B5CF6; }
+      66% { stop-color: #06B6D4; }
+    }
+    @keyframes gradientShift2 {
+      0%, 100% { stop-color: #8B5CF6; }
+      33% { stop-color: #06B6D4; }
+      66% { stop-color: #0D6EFD; }
+    }
+    @keyframes gradientShift3 {
+      0%, 100% { stop-color: #06B6D4; }
+      33% { stop-color: #0D6EFD; }
+      66% { stop-color: #8B5CF6; }
+    }
+    @keyframes nodePulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.85; }
+    }
+    @keyframes nodePulse2 {
+      0%, 100% { opacity: 0.25; }
+      50% { opacity: 0.7; }
+    }
+    @keyframes dashFlow {
+      0% { stroke-dashoffset: 20; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes floatDown {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(5px); }
+    }
+    @keyframes subtitleFade {
+      0%, 100% { opacity: 0.85; }
+      50% { opacity: 1; }
+    }
+    @keyframes lineGlow {
+      0%, 100% { opacity: 0.08; }
+      50% { opacity: 0.2; }
+    }
+    .connection {
+      stroke-dasharray: 6 4;
+      animation: dashFlow 3s linear infinite;
+    }
+    .connection-slow {
+      stroke-dasharray: 8 6;
+      animation: dashFlow 5s linear infinite;
+    }
+    .node-a { animation: nodePulse 4s ease-in-out infinite; }
+    .node-b { animation: nodePulse 4s ease-in-out 0.8s infinite; }
+    .node-c { animation: nodePulse 4s ease-in-out 1.6s infinite; }
+    .node-d { animation: nodePulse2 5s ease-in-out 0.4s infinite; }
+    .node-e { animation: nodePulse2 5s ease-in-out 1.2s infinite; }
+    .node-f { animation: nodePulse 4s ease-in-out 2.4s infinite; }
+    .particle { animation: floatUp 6s ease-in-out infinite; }
+    .particle-alt { animation: floatDown 7s ease-in-out infinite; }
+    .grid-line { animation: lineGlow 6s ease-in-out infinite; }
+    .grid-line-alt { animation: lineGlow 6s ease-in-out 3s infinite; }
+  </style>
+
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D6EFD" stop-opacity="0.12">
+        <animate attributeName="stop-color" values="#0D6EFD;#8B5CF6;#06B6D4;#0D6EFD" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#8B5CF6" stop-opacity="0.08">
+        <animate attributeName="stop-color" values="#8B5CF6;#06B6D4;#0D6EFD;#8B5CF6" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.12">
+        <animate attributeName="stop-color" values="#06B6D4;#0D6EFD;#8B5CF6;#06B6D4" dur="10s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#E0E7FF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <linearGradient id="subtitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+
+    <linearGradient id="bottomLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D6EFD" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#0D6EFD" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#8B5CF6" stop-opacity="0.8"/>
+      <stop offset="80%" stop-color="#06B6D4" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.055  0 0 0 0 0.431  0 0 0 0 0.992  0 0 0 0.4 0" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="nodeGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="850" height="280" fill="#0D1117"/>
+  <rect width="850" height="280" fill="url(#bgGrad)"/>
+  <ellipse cx="425" cy="140" rx="350" ry="120" fill="url(#centerGlow)"/>
+
+  <!-- Subtle grid pattern -->
+  <line x1="0" y1="70" x2="850" y2="70" stroke="#1E293B" stroke-width="0.3" class="grid-line"/>
+  <line x1="0" y1="140" x2="850" y2="140" stroke="#1E293B" stroke-width="0.3" class="grid-line-alt"/>
+  <line x1="0" y1="210" x2="850" y2="210" stroke="#1E293B" stroke-width="0.3" class="grid-line"/>
+  <line x1="170" y1="0" x2="170" y2="280" stroke="#1E293B" stroke-width="0.3" class="grid-line-alt"/>
+  <line x1="340" y1="0" x2="340" y2="280" stroke="#1E293B" stroke-width="0.3" class="grid-line"/>
+  <line x1="510" y1="0" x2="510" y2="280" stroke="#1E293B" stroke-width="0.3" class="grid-line-alt"/>
+  <line x1="680" y1="0" x2="680" y2="280" stroke="#1E293B" stroke-width="0.3" class="grid-line"/>
+
+  <!-- Neural Network — Left Side -->
+  <!-- Layer 1 -->
+  <circle cx="65" cy="70" r="3.5" fill="#0D6EFD" class="node-a" filter="url(#nodeGlow)"/>
+  <circle cx="55" cy="140" r="3" fill="#0D6EFD" class="node-c" filter="url(#nodeGlow)"/>
+  <circle cx="70" cy="210" r="3.5" fill="#0D6EFD" class="node-b" filter="url(#nodeGlow)"/>
+
+  <!-- Layer 2 -->
+  <circle cx="160" cy="95" r="3" fill="#6366F1" class="node-d" filter="url(#nodeGlow)"/>
+  <circle cx="150" cy="185" r="3" fill="#6366F1" class="node-e" filter="url(#nodeGlow)"/>
+
+  <!-- Layer 3 -->
+  <circle cx="250" cy="115" r="2.5" fill="#8B5CF6" class="node-b" filter="url(#nodeGlow)"/>
+  <circle cx="245" cy="175" r="2.5" fill="#8B5CF6" class="node-f" filter="url(#nodeGlow)"/>
+
+  <!-- Connections Left -->
+  <line x1="65" y1="70" x2="160" y2="95" stroke="#0D6EFD" stroke-width="0.6" opacity="0.25" class="connection"/>
+  <line x1="65" y1="70" x2="150" y2="185" stroke="#0D6EFD" stroke-width="0.4" opacity="0.15" class="connection-slow"/>
+  <line x1="55" y1="140" x2="160" y2="95" stroke="#6366F1" stroke-width="0.5" opacity="0.2" class="connection"/>
+  <line x1="55" y1="140" x2="150" y2="185" stroke="#6366F1" stroke-width="0.6" opacity="0.25" class="connection-slow"/>
+  <line x1="70" y1="210" x2="150" y2="185" stroke="#0D6EFD" stroke-width="0.5" opacity="0.2" class="connection"/>
+  <line x1="160" y1="95" x2="250" y2="115" stroke="#8B5CF6" stroke-width="0.5" opacity="0.2" class="connection-slow"/>
+  <line x1="160" y1="95" x2="245" y2="175" stroke="#8B5CF6" stroke-width="0.4" opacity="0.15" class="connection"/>
+  <line x1="150" y1="185" x2="245" y2="175" stroke="#8B5CF6" stroke-width="0.5" opacity="0.2" class="connection-slow"/>
+  <line x1="150" y1="185" x2="250" y2="115" stroke="#8B5CF6" stroke-width="0.4" opacity="0.15" class="connection"/>
+
+  <!-- Neural Network — Right Side -->
+  <!-- Layer 3 -->
+  <circle cx="605" cy="110" r="2.5" fill="#8B5CF6" class="node-f" filter="url(#nodeGlow)"/>
+  <circle cx="610" cy="180" r="2.5" fill="#8B5CF6" class="node-a" filter="url(#nodeGlow)"/>
+
+  <!-- Layer 4 -->
+  <circle cx="700" cy="90" r="3" fill="#06B6D4" class="node-e" filter="url(#nodeGlow)"/>
+  <circle cx="695" cy="190" r="3" fill="#06B6D4" class="node-d" filter="url(#nodeGlow)"/>
+
+  <!-- Layer 5 -->
+  <circle cx="790" cy="65" r="3.5" fill="#0D6EFD" class="node-b" filter="url(#nodeGlow)"/>
+  <circle cx="785" cy="140" r="3" fill="#0D6EFD" class="node-a" filter="url(#nodeGlow)"/>
+  <circle cx="790" cy="215" r="3.5" fill="#0D6EFD" class="node-c" filter="url(#nodeGlow)"/>
+
+  <!-- Connections Right -->
+  <line x1="605" y1="110" x2="700" y2="90" stroke="#8B5CF6" stroke-width="0.5" opacity="0.2" class="connection"/>
+  <line x1="605" y1="110" x2="695" y2="190" stroke="#06B6D4" stroke-width="0.4" opacity="0.15" class="connection-slow"/>
+  <line x1="610" y1="180" x2="700" y2="90" stroke="#06B6D4" stroke-width="0.4" opacity="0.15" class="connection"/>
+  <line x1="610" y1="180" x2="695" y2="190" stroke="#06B6D4" stroke-width="0.5" opacity="0.2" class="connection-slow"/>
+  <line x1="700" y1="90" x2="790" y2="65" stroke="#06B6D4" stroke-width="0.6" opacity="0.25" class="connection-slow"/>
+  <line x1="700" y1="90" x2="785" y2="140" stroke="#0D6EFD" stroke-width="0.5" opacity="0.2" class="connection"/>
+  <line x1="695" y1="190" x2="785" y2="140" stroke="#0D6EFD" stroke-width="0.5" opacity="0.2" class="connection-slow"/>
+  <line x1="695" y1="190" x2="790" y2="215" stroke="#0D6EFD" stroke-width="0.6" opacity="0.25" class="connection"/>
+
+  <!-- Floating particles -->
+  <circle cx="120" cy="45" r="1.2" fill="#06B6D4" opacity="0.5" class="particle"/>
+  <circle cx="320" cy="50" r="1" fill="#8B5CF6" opacity="0.4" class="particle-alt"/>
+  <circle cx="530" cy="42" r="1.3" fill="#0D6EFD" opacity="0.4" class="particle"/>
+  <circle cx="730" cy="48" r="1" fill="#06B6D4" opacity="0.5" class="particle-alt"/>
+  <circle cx="180" cy="235" r="1" fill="#8B5CF6" opacity="0.4" class="particle-alt"/>
+  <circle cx="420" cy="245" r="1.2" fill="#06B6D4" opacity="0.3" class="particle"/>
+  <circle cx="660" cy="238" r="1" fill="#0D6EFD" opacity="0.4" class="particle-alt"/>
+
+  <!-- Title -->
+  <text x="425" y="125" text-anchor="middle" fill="url(#titleGrad)" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="40" font-weight="700" letter-spacing="1" filter="url(#textGlow)">
+    Karthik Vanapalli
+  </text>
+
+  <!-- Subtitle -->
+  <text x="425" y="165" text-anchor="middle" fill="url(#subtitleGrad)" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="14" font-weight="400" letter-spacing="3" style="animation: subtitleFade 4s ease-in-out infinite">
+    MACHINE LEARNING  ·  COMPUTER VISION  ·  ROBOTICS  ·  AI ENGINEERING
+  </text>
+
+  <!-- Bottom accent line -->
+  <rect x="175" y="195" width="500" height="1.5" rx="1" fill="url(#bottomLine)">
+    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Bottom tagline -->
+  <text x="425" y="225" text-anchor="middle" fill="#94A3B8" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="11" font-weight="300" letter-spacing="1" opacity="0.7">
+    Building intelligent systems that perceive, reason, and solve real-world problems
+  </text>
+</svg>
